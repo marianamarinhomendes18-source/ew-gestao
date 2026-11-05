@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.022em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    letter-spacing: -0.022em;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.font-mono-numbers {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "tnum";
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.025em;
+}
+
+/* Mobile safe area & smooth scrolling */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .pb-safe {
+    padding-bottom: calc(env(safe-area-inset-bottom) + 1rem);
+  }
+}
+
+/* Custom scrollbars for clean table look */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 10mm;
+  }
+
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  html, body, #root, #root > div, main {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    min-height: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    position: static !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .no-print, [data-no-print="true"], header, aside, nav, footer, .mobile-nav-bar {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Prevent modals from clipping or staying locked in screen coordinates */
+  .fixed, .fixed.inset-0 {
+    position: static !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .max-h-\[95vh\], .max-h-\[90vh\], .max-h-\[92vh\], .max-h-\[75vh\], .max-h-\[80vh\] {
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .overflow-y-auto, .overflow-hidden, .overflow-auto {
+    overflow: visible !important;
+    max-height: none !important;
+  }
+
+  /* Prevent ugly cuts in tables, cards and rows */
+  table {
+    border-collapse: collapse !important;
+    width: 100% !important;
+  }
+
+  tr, td, th {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  .print-card, .page-break-inside-avoid, .break-inside-avoid {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+}
+
+@media screen {
+  .print-only {
+    display: none !important;
+  }
+}

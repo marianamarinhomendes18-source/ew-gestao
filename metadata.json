@@ -1,0 +1,6 @@
+{
+  "name": "Prédio EW — Gestão Financeira e Contratual",
+  "description": "Sistema de gestão financeira, controle de contratos, cronograma de parcelas e recebíveis do empreendimento imobiliário PRÉDIO EW.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
